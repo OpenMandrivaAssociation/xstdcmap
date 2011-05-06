@@ -1,6 +1,6 @@
 Name:		xstdcmap
 Version:	1.0.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 Summary:	X standard colormap utility
 Group:		Development/X11
 Source:		http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
