@@ -1,14 +1,13 @@
 Name:		xstdcmap
-Version:	1.0.2
-Release:	%mkrel 4
+Version:	1.0.3
+Release:	1
 Summary:	X standard colormap utility
 Group:		Development/X11
-Source:		http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/app/%{name}-%{version}.tar.bz2
 License:	MIT
-BuildRoot:	%{_tmppath}/%{name}-root
 
-BuildRequires: libx11-devel >= 1.0.0
-BuildRequires: libxmu-devel >= 1.0.0
+BuildRequires: pkgconfig(x11)
+BuildRequires: pkgconfig(xmu)
 BuildRequires: x11-util-macros >= 1.0.1
 
 %description
@@ -28,14 +27,9 @@ possible, colormaps are created with read-only allocations.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %{_bindir}/xstdcmap
 %{_mandir}/man1/xstdcmap.1*
 
